@@ -6,41 +6,38 @@
 #define rst 15
 #define dio0 2
 
+int counter = 10000;
+
 void setup() {
   //initialize Serial Monitor
   Serial.begin(115200);
   while (!Serial);
-  Serial.println("LoRa Receiver");
+  Serial.println("LoRa Sender");
 
   //setup LoRa transceiver module
   LoRa.setPins(ss, rst, dio0);
   
   //replace the LoRa.begin(---E-) argument with your location's frequency 
   //433E6 for Asia
-
   while (!LoRa.begin(433E6)) {
     Serial.println(".");
     delay(500);
   }
-   // Change sync word (0xF3) to match the receiver
-  // The sync word assures you don't get LoRa messages from other LoRa transceivers
-  // ranges from 0-0xFF
-LoRa.enableCrc();
+
   Serial.println("LoRa Initialization Completed!");
 }
 
 void loop() {
-  // try to parse packet
-  int packetSize = LoRa.parsePacket();
-  if (packetSize) {
-    // received a packet
-    Serial.print("Received packet - '");
+  Serial.print("Sending packet: ");
+  Serial.println(counter);
 
-    // read packet
-    while (LoRa.available()) {
-      String LoRaData = LoRa.readString();
-      Serial.print(LoRaData); 
-      Serial.println("'");
-    } 
-  }
+  //Send LoRa packet to receiver
+  LoRa.beginPacket();
+  // LoRa.print("C = "); // Any prefix to the counter value.
+  LoRa.print(counter);
+  LoRa.endPacket();
+
+  counter++;
+
+delay(random(1000, 2000));;
 }
