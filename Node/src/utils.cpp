@@ -21,6 +21,8 @@ void initLora(){
     delay(500);
   }
   Serial.println("LoRa Initialization Completed!");
+    // register the receive callback
+
 }
 
 
@@ -95,3 +97,4 @@ void deepSleepESP() {
   esp_sleep_enable_timer_wakeup(sleepTime);
   esp_deep_sleep_start();
 }
+
