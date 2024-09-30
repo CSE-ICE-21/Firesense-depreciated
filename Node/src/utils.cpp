@@ -22,7 +22,7 @@ void initLora(){
   }
   Serial.println("LoRa Initialization Completed!");
     // register the receive callback
-
+      LoRa.receive();
 }
 
 

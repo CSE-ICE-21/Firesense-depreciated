@@ -18,19 +18,6 @@ void initialSetup()
   esp_deep_sleep_start();
 }
 
-// void onReceive(int packetSize)
-// {
-//   Serial.println("Packet Size: " + String(packetSize));
-//   if (packetSize == 0)
-//     return; // if there's no packet, return
-//   String incoming = "";
-
-//   while (LoRa.available())
-//   {
-//     incoming += (char)LoRa.read();
-//   }
-//   Serial.println("Message Received: " + incoming);
-// }
 
 void respond()
 {
@@ -67,13 +54,10 @@ void setup()
 {
   setupSerial();
   initLora();
-
-  // put the radio into receive mode
-  LoRa.receive();
   runFunction(state_number);
 }
 
 void loop()
 {
-  // The ESP32 will enter deep sleep and not reach this point unless woken up.
+  // The ESP32 will enter deep sleep and not reach this point, will always stop after running setup().
 }
