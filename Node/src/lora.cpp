@@ -7,7 +7,7 @@ String deviceID;
 void listenForPackets(unsigned long loopDuration)
 {
     unsigned long startTime = millis(); // Record the start time
-    while (millis() - startTime < loopDuration)
+    while (millis() - startTime < random(2000,loopDuration))
     { // Run for loopDuration milliseconds
         int packetSize = LoRa.parsePacket();
         if (packetSize > 0)
