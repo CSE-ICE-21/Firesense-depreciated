@@ -1,7 +1,7 @@
 //define the pins used by the lora transceiver module
 
 #define SS 5
-#define RST 15
+#define RST 22
 #define DIO0 2
 
 #define LISTENING_INTERVAL 5000
