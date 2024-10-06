@@ -1,9 +1,11 @@
 #include <globals.h>
 #include <functions.h>
 #include <constants.h>
+#include <LoRa.h>
 
 void _initialSetup()
 {
+    LoRa.channelActivityDetection(); // Put the radio into CAD mode
     uint64_t wakeup_pins = (1ULL << DIO0) | (1ULL << SENSOR_INPUT); // Bitmask for the pins that will trigger the wakeup
     // Enable EXT1 wakeup for both pins, wake up when either pin goes HIGH
     esp_sleep_enable_ext1_wakeup(wakeup_pins, ESP_EXT1_WAKEUP_ANY_HIGH);
@@ -32,7 +34,7 @@ void _respond()
             if (wakeup_pin_mask & (1ULL << DIO0))
             {
                 Serial.println("GPIO 13 caused the wakeup.");
-                listenForPackets(LISTENING_INTERVAL);
+                listenForPackets(LISTENING_INT_LOW,LISTENING_INT_HIGH);
             }
         }
     }

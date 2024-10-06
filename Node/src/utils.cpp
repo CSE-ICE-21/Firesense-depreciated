@@ -26,7 +26,6 @@ void initLora()
     delay(500);
   }
   Serial.println("LoRa Initialization Completed!");
-  LoRa.receive(); // Put the radio into receive mode
 }
 
 // Generation of a random 6-character ID (alphanumeric: 0-9, A-F) and verification of it.

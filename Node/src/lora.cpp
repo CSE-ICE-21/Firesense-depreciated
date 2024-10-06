@@ -4,10 +4,10 @@
 
 String deviceID;
 
-void listenForPackets(unsigned long loopDuration)
+void listenForPackets(unsigned long lowerbound, unsigned long upperbound)
 {
     unsigned long startTime = millis(); // Record the start time
-    while (millis() - startTime < loopDuration)
+    while (millis() - startTime < random(lowerbound, upperbound))
     { // Run for loopDuration milliseconds
         int packetSize = LoRa.parsePacket();
         if (packetSize > 0)

@@ -9,5 +9,5 @@ void runFunction(int state_number);
 void sensorSetup();
 
 // lora
-void listenForPackets(unsigned long loopDuration);
+void listenForPackets(unsigned long lowerbound, unsigned long upperbound);
 void sendPacket( String message);
