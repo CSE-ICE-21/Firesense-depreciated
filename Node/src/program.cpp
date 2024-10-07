@@ -42,7 +42,11 @@ void _respond()
     else if (esp_sleep_get_wakeup_cause() == ESP_SLEEP_WAKEUP_TIMER)
     {
         Serial.println("Fire sensor check Wakeup.");
-        if (readDigitalSensor(SENSOR_INPUT) == HIGH)
+        digitalWrite(SENSORSWITCH, HIGH); // Turn on the sensor
+        delay(1000);                      // Wait for the sensor to stabilize
+        int reading = readDigitalSensor(SENSOR_INPUT);
+        digitalWrite(SENSORSWITCH, LOW); // Turn off the sensor
+        if (reading == HIGH)
         {
             Serial.println("Fire Hazard Detected.");
             sendPacket("FIRE");
