@@ -13,9 +13,10 @@
        />
     </picture>
   </p>
-<h4 align="center">🔥The Wildfire Detection Node Network 🔥<h6>
-
+<h4 align="center">🔥The Wildfire Detection Node Network 🔥</h4>
+<h6>
 This project focuses on creating a wireless mesh network for early wildfire detection using LoRa. Wildfires pose significant threats to ecosystems, property, and human life, especially in remote areas where detection and response times are often delayed. The system leverages multiple nodes equipped with smoke sensors spread across a forest, forming a mesh network to relay fire alerts to a gateway, which then sends the alerts to a remote monitoring system.
+</h6>
 
 ### Key Features:
 - **Early Detection**: Detect wildfires at an early stage to enable a faster response.
@@ -24,4 +25,5 @@ This project focuses on creating a wireless mesh network for early wildfire dete
 - **Scalability**: Easily expandable by adding more nodes to the network.
 - **Reliability**: Ensures the network can function even if some nodes are temporarily out of communication range.
 
-> **Tip:** To learn more about the project including technical details, architecture, and components, please refer to the [Wiki](../../wiki).
+> [!TIP]
+> To learn more about the project including technical details, architecture, and components, please refer to the [Wiki](https://github.com/chathura-de-silva/Firesense/wiki).
