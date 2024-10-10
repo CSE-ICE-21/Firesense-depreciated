@@ -1,13 +1,13 @@
-<p align="center"><img src="./logo.png" width="200" /></p>
+<p align="center"><img src="./Docs/Readme Assets/logo.png" width="200" /></p>
 
 <p align="center">
     <picture>
       <source 
-        srcset="./light-text.png"
+        srcset="./Docs/Readme Assets/dark-text.png"
         media="(prefers-color-scheme: dark)"
       />
       <img 
-        src="./dark-text.png" 
+        src="./Docs/Readme Assets/light-text.png" 
         alt="Logo Text"
         width="800"
        />
@@ -25,5 +25,8 @@ This project focuses on creating a wireless mesh network for early wildfire dete
 - **Scalability**: Easily expandable by adding more nodes to the network.
 - **Reliability**: Ensures the network can function even if some nodes are temporarily out of communication range.
 
-> [!TIP]
-> To learn more about the project including technical details, architecture, and components, please refer to the [Wiki](https://github.com/chathura-de-silva/Firesense/wiki).
+<br>
+<a href="https://github.com/chathura-de-silva/Firesense/wiki">
+<img src="./Docs/Readme Assets/ReadMoreButton.png" a
+style="display: block; margin: 0 auto; width: 60%; height: auto;" alt="Wiki Button" 
+></a>
