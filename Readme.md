@@ -26,7 +26,9 @@ This project focuses on creating a wireless mesh network for early wildfire dete
 - **Reliability**: Ensures the network can function even if some nodes are temporarily out of communication range.
 
 <br>
+<p align="center">
 <a href="https://github.com/chathura-de-silva/Firesense/wiki">
 <img src="./Docs/Readme Assets/ReadMoreButton.png" a
-style="display: block; margin: 0 auto; width: 60%; height: auto;" alt="Wiki Button" 
+style="width: 60%; height: auto;" alt="Wiki Button" 
 ></a>
+</p>
