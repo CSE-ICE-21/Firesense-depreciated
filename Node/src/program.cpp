@@ -43,7 +43,7 @@ void _respond()
     {
         Serial.println("Fire sensor check Wakeup.");
         digitalWrite(SENSORSWITCH, HIGH); // Turn on the sensor
-        delay(1000);                      // Wait for the sensor to stabilize
+        delay(5000);                      // Wait for the sensor to stabilize
         int reading = readDigitalSensor(SENSOR_INPUT);
         digitalWrite(SENSORSWITCH, LOW); // Turn off the sensor
         if (reading == LOW)
