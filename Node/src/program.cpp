@@ -46,7 +46,7 @@ void _respond()
         delay(1000);                      // Wait for the sensor to stabilize
         int reading = readDigitalSensor(SENSOR_INPUT);
         digitalWrite(SENSORSWITCH, LOW); // Turn off the sensor
-        if (reading == HIGH)
+        if (reading == LOW)
         {
             Serial.println("Fire Hazard Detected.");
             sendPacket("FIRE");
