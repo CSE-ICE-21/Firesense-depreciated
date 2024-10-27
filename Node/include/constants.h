@@ -6,6 +6,6 @@
 
 #define LISTENING_INT_LOW 2000 // in milliseconds
 #define LISTENING_INT_HIGH 5000 // in milliseconds
-#define TEMP_CHECK_INTERVAL 5 // in minutes
+#define TEMP_CHECK_INTERVAL 0.5 // in minutes
 #define WAITBEFORERESEND 10 // in seconds
 #define RESETINTERVAL 15 // in minutes

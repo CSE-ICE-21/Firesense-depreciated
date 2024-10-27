@@ -48,11 +48,16 @@ void sendPacket(String message)
                 Serial.println(reply + "- Recieved Acknowledgement");
                 return;
             }
+            else if (validateID(reply) && message != reply && random(0, 2)) // This randomisation is to avoid the livelock situation occur when conflicting nodes which was sending two different messages(which is already a livelock) both switch to each others message to acknowledge each other.
+            {
+                Serial.println(reply + "- Sent an Acknowledgement for another message!");
+                sendPacket(reply);
+            }
         }
         else
         {
             Serial.println("Packet failed to send");
-            delay(WAITBEFORERESEND * 1000); // Wait before resending
+            delay(WAITBEFORERESEND * random(1000, 1500)); // Wait before resending
         }
     }
 }
