@@ -3,7 +3,7 @@
 #include <constants.h>
 #include <LoRa.h>
 
-void _systemReset(uint64_t resetInterval) // Reset the system after a certain time.
+void systemReset(uint64_t resetInterval) // Reset the system after a certain time.
 {
     Serial.println("Shutting down the Node...Will reset and restart after " + String(resetInterval) + " minutes.");
     system_state = 0;
@@ -33,7 +33,7 @@ void _respond()
         if (validateID(msg))
         {
             sendPacket(msg);
-            _systemReset(RESETINTERVAL);
+            systemReset(RESETINTERVAL);
         }
         else
         {
@@ -51,7 +51,7 @@ void _respond()
         {
             Serial.println("Fire Hazard Detected.");
             sendPacket(deviceID);
-            _systemReset(RESETINTERVAL);
+            systemReset(RESETINTERVAL);
         }
         else
         {

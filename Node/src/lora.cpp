@@ -53,6 +53,11 @@ void sendPacket(String message)
                 Serial.println(reply + "- Sent an Acknowledgement for another message!");
                 sendPacket(reply);
             }
+            else if (reply == "IMMEDIATE_RESET")
+            {
+                Serial.println("System Reset Command Recieved from the Gateway.");
+                return;
+            }
         }
         else
         {
