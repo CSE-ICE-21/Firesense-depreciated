@@ -12,6 +12,9 @@ String getDeviceID();
 // int readAnalogSensor(int pin, int numSamples = 10);
 bool readDigitalSensor(int pin);
 
+// Program
+void systemReset(uint64_t resetInterval); // Reset the system after a certain time.
+
 // lora
 String listenForPackets(unsigned long lowerbound, unsigned long upperbound);
 void sendPacket( String message);
