@@ -14,4 +14,10 @@ bool readDigitalSensor(int pin);
 
 // lora
 String listenForPackets(unsigned long lowerbound, unsigned long upperbound);
-void sendPacket( String message);
+void sendSystemMessage(String message);
+
+// mqtt
+void sendHazardMQTT(String Payload);
+
+//gsm 
+void setupGSM();

@@ -32,7 +32,8 @@ void _respond()
         String msg = listenForPackets(LISTENING_INT_LOW, LISTENING_INT_HIGH);
         if (validateID(msg))
         {
-            sendPacket(msg);
+            sendHazardMQTT(msg);
+            sendSystemMessage("IMMEDIATE_RESET");
             _systemReset(RESETINTERVAL);
         }
         else
@@ -44,13 +45,13 @@ void _respond()
     {
         Serial.println("Fire sensor check Wakeup.");
         digitalWrite(SENSORSWITCH, HIGH); // Turn on the sensor
-        delay(10000);                      // Wait for the sensor to stabilize
+        delay(10000);                     // Wait for the sensor to stabilize
         int reading = readDigitalSensor(SENSOR_INPUT);
         digitalWrite(SENSORSWITCH, LOW); // Turn off the sensor
         if (reading == LOW)
         {
             Serial.println("Fire Hazard Detected.");
-            sendPacket(deviceID);
+            sendHazardMQTT(deviceID);
             _systemReset(RESETINTERVAL);
         }
         else

@@ -30,7 +30,7 @@ String listenForPackets(unsigned long lowerbound, unsigned long upperbound)
     return "NULL";
 }
 
-void sendPacket(String message)
+void sendSystemMessage(String message)
 {
     while (true)
     {
@@ -43,15 +43,10 @@ void sendPacket(String message)
         {
             Serial.println("Packet sent successfully");
             String reply = listenForPackets(LISTENING_INT_LOW, LISTENING_INT_HIGH);
-            if (validateID(reply) && message == reply) //  "NULL" return will be invalid.
+            if (reply == "NULL")
             {
-                Serial.println(reply + "- Recieved Acknowledgement");
-                return;
-            }
-            else if (validateID(reply) && message != reply && random(0, 2)) // This randomisation is to avoid the livelock situation occur when conflicting nodes which was sending two different messages(which is already a livelock) both switch to each others message to acknowledge each other.
-            {
-                Serial.println(reply + "- Sent an Acknowledgement for another message!");
-                sendPacket(reply);
+                Serial.println("All neighbours notified to reset.");
+                break;
             }
         }
         else

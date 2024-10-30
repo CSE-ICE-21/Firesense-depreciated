@@ -9,6 +9,7 @@ void setup()
   setupSerial(); // Comment out this line on production builds in addition to all Serial Print statements.
   initLora();
   sensorSetup();
+  setupGSM();
   runFunction(system_state);
 }
 
